@@ -1,3 +1,14 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const strapiConfig = {
+  apiURL: process.env.STRAPI_API_URL,
+  accessToken: process.env.STRAPI_TOKEN,
+  collectionTypes: [`propiedad`, `pagina`, `categoria`],
+  singleTypes: [],
+}
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -18,6 +29,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: "http://localhost:1337",
+        queryLimit: 1000,
+        collectionTypes: [`propiedad`, `pagina`, `categoria`],
+        accessToken: process.env.STRAPI_TOKEN,
+      },
+    },
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

@@ -7,7 +7,9 @@
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "dotenv": "^16.0.1",
     "gatsby": "^4.14.0",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-emotion": "^7.14.0",
     "gatsby-plugin-gatsby-cloud": "^4.14.0",
     "gatsby-plugin-image": "^2.14.1",
@@ -16,6 +18,8 @@
     "gatsby-plugin-react-helmet": "^5.14.0",
     "gatsby-plugin-sharp": "^4.14.1",
     "gatsby-source-filesystem": "^4.14.0",
+    "gatsby-source-strapi": "^2.0.0",
+    "gatsby-transformer-remark": "^5.14.0",
     "gatsby-transformer-sharp": "^4.14.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",

@@ -1,7 +1,9 @@
-import { Link } from 'gatsby';
 import React from 'react';
-import Navegacion from './navegacion';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
+import Navegacion from './navegacion';
+
 
 const Header = () => {
     return ( 
@@ -24,7 +26,9 @@ const Header = () => {
                     }
                 `}
             >
-                <Link to="/">Bienes Raices</Link>
+                <Link to="/">
+                    <StaticImage src='../images/logo.svg' alt='Logo' />
+                </Link>
                 <Navegacion />
             </div>
         </header>
