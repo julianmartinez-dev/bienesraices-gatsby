@@ -4,9 +4,10 @@
     max-width: 1200px;
     display: flex;
     margin: 0 auto;
-    flex-direction: colum;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .titulo{
