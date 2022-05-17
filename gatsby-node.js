@@ -8,7 +8,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allStrapiPropiedad {
         nodes {
           nombre
-          strapi_id
           id
         }
       }
@@ -36,7 +35,7 @@ console.log(propiedades)
       path: "/propiedades/" + slug,
       component: require.resolve("./src/templates/propiedad.js"),
       context: {
-        slug: slug,
+        id: propiedad.id,
       },
       defer: true,
     })
