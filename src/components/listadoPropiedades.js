@@ -26,7 +26,8 @@ const ListadoPropiedades = () => {
         }
 
        
-   },[filtro]);
+   },[filtro, propiedades]);
+
   return (
       <>
       

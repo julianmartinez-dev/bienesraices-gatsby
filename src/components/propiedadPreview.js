@@ -42,15 +42,11 @@ const Contenido = styled.div`
 
 const PropiedadPreview = ({ propiedad }) => {
   const {
-    id,
     nombre,
     precio,
     habitaciones,
     estacionamiento,
-    agente,
     wc,
-    categoria,
-    descripcion,
     imagen
   } = propiedad
 

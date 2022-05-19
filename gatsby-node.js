@@ -5,6 +5,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const resultado = await graphql(`
     query {
+      allStrapiPagina{
+        nodes {
+          nombre
+          id
+        }
+      }
       allStrapiPropiedad {
         nodes {
           nombre
@@ -22,15 +28,26 @@ if(resultado.errors){
 }
 
 //Si hay resultados, crear los archivos
-
+const paginas = resultado.data.allStrapiPagina.nodes
 const propiedades = resultado.data.allStrapiPropiedad.nodes
 
-console.log(propiedades)
 
+//Crear los templates para paginas
+paginas.forEach(pagina => {
+    createPage({
+        path: `/${urlSlug.convert(pagina.nombre)}`,
+        component: require.resolve(`./src/templates/pagina.js`),
+        context: {
+            id: pagina.id
+        },
+        defer: true
+    })
+})
+
+
+//Crear los templates para propiedades
   propiedades.forEach(propiedad => {
-
     const slug = urlSlug.convert(propiedad.nombre)
-    
     createPage({
       path: "/propiedades/" + slug,
       component: require.resolve("./src/templates/propiedad.js"),
